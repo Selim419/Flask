@@ -10,10 +10,10 @@ def list_html_files(directory):
             if file.endswith(".html"):
                 html_files.append(file)
     return html_files
-
+web_directory_input = input("Type the file path: ")
 @app.route('/')
 def index():
-    web_directory = '/sdcard/Download/Hack/Web_Tools/templates/'
+    web_directory = (web_directory_input)
     html_files = list_html_files(web_directory)
     return render_template("index.html", html_files=html_files)
 
